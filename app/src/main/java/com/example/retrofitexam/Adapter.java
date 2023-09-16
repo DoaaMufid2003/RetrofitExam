@@ -39,14 +39,14 @@ Lesitner lesitner;
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.button.setText(stringList.get(position).toString());
-        if (holder.button.getText().equals("smartphones")){
+
             holder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    lesitner.Onclick();
+                    lesitner.Onclick(holder.button.getText().toString());
                 }
             });
-        }
+
 
     }
 

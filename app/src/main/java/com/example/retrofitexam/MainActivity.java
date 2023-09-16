@@ -28,11 +28,12 @@ public class MainActivity extends AppCompatActivity {
         ApiServier.Retrofitclass.getRetrofitInstance().categories().enqueue(new Callback<List<String>>() {
             @Override
             public void onResponse(Call<List<String>> call, Response<List<String>> response) {
-
                 Adapter adapter = new Adapter(response.body(), getApplicationContext(), new Lesitner() {
                     @Override
                     public void Onclick(String categoryname) {
-
+                        Intent intent=new Intent(getApplicationContext(), Categoty_Product_Activity.class);
+                        intent.putExtra("name", categoryname);
+                        startActivity(intent);
                     }
 
                     @Override

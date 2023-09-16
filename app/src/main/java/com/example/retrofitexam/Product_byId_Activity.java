@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.bumptech.glide.Glide;
 import com.example.retrofitexam.Model.Category_Product_Responce;
 import com.example.retrofitexam.databinding.ActivityProductByIdBinding;
 
@@ -28,7 +29,7 @@ ActivityProductByIdBinding binding;
            Category_Product_Responce.Products products= response.body();
          binding.tvPrice.setText(products.getPrice());
          binding.tvTitle.setText(products.getTitle());
-         binding.img.setImageURI(Uri.parse(products.getThumbnail()));
+        Glide.with(getApplicationContext()).load(products.getThumbnail()).into(binding.img);
         }
 
         @Override

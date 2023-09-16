@@ -46,7 +46,7 @@ ListenerInterface listenerInterface;
         if (products==null){
             return;
         }else {
-            Glide.with(context).load(products.getThumbnail()).optionalCircleCrop().into(holder.imageView);
+            Glide.with(context).load(products.getThumbnail()).into(holder.imageView);
             holder.disciption.setText(products.getDescription());
             holder.title.setText(products.getTitle());
             holder.itemView.setOnClickListener(new View.OnClickListener() {

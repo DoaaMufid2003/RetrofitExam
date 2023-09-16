@@ -35,7 +35,7 @@ public class Categoty_Product_Activity extends AppCompatActivity {
                addproduct();
            }
        });
-       apiServier.get_categorios_products("smartphones").enqueue(new Callback<Category_Product_Responce>() {
+       apiServier.get_categorios_products(getIntent().getStringExtra("name")).enqueue(new Callback<Category_Product_Responce>() {
             @Override
             public void onResponse(Call<Category_Product_Responce> call, Response<Category_Product_Responce> response) {
                  category = response.body();
